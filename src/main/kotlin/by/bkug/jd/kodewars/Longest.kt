@@ -16,5 +16,21 @@ package by.bkug.jd.kodewars
  * longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
  */
 fun longest(s1: String, s2: String): String {
-    TODO("1 Point")
+    var result = s1.toCharArray() + s2.toCharArray()
+    result.sort()
+    var res = result.distinct()
+    var str = ""
+
+    for(i in 0..res.size-1) {
+        str += res[i]
+    }
+
+    print(str)
+    return str
+
+    //TODO("1 Point")
+}
+
+fun main(args: Array<String>) {
+    longest("xyaabbbccccdefww", "xxxxyyyyabklmopq")
 }
