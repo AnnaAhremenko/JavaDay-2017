@@ -21,5 +21,31 @@ package by.bkug.jd.kodewars
  * in this case, it's invalid because contain a non numerical character
  */
 fun findMissingNumber(s: String): Long {
-    TODO("3 Points")
+    //TODO("3 Points")
+    var res : Long = 0
+    var arr = s.replace(" ", "").toCharArray().sortedArray()
+
+    if(arr.isNotEmpty()) {
+        for (i in 0..arr.size - 1) {
+            if (arr[i].isLetter()) {
+                res = 1
+                break
+            }
+        }
+        if (res != 1.toLong()) {
+            for (i in 0..arr.size - 1) {
+                if (arr[i + 1] - arr[i] >= 2) {
+                    res = arr[i].toInt().toLong() - 47
+                    break
+                }
+            }
+        }
+    }
+
+    println(res)
+    return res
+}
+
+fun main(args: Array<String>) {
+    findMissingNumber("1 3 2 4 6")
 }
