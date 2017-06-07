@@ -1,5 +1,7 @@
 package by.bkug.jd.kodewars
 
+import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray
+
 /**
  * Description:
  *
@@ -48,5 +50,20 @@ package by.bkug.jd.kodewars
  * I have created other katas. Have a look if you like coding and challenges.
  */
 fun addingShifted(arrays: Array<IntArray>, shift: Int): IntArray {
-    TODO("3 Points")
+    //TODO("3 Points")
+    var result = IntArray(arrays[0].size + shift * (arrays.size-1))
+
+
+    for(i in 0..arrays.size-1) {
+        for (j in 0 .. arrays[i].size-1) {
+            result[j+shift*i] += arrays[i][j]
+        }
+    }
+
+    return result
+}
+
+fun main(args: Array<String>) {
+    val ArrayOfArrays = arrayOf(intArrayOf(1,2,3,4,5,6), intArrayOf(7,7,7,-7,7,7), intArrayOf(1,1,1,1,1,1))
+    addingShifted(ArrayOfArrays, 3)
 }
