@@ -10,11 +10,11 @@ package by.bkug.jd.kodewars
  *
  * A little visualization (NOT for the algorithm but for the idea of folding):
  *
- * Step 1         Step 2        Step 3       Step 4       Step5
- *                        5/       5|         5\
- *                      4/          4|          4\
- * 1 2 3 4 5      1 2 3/         1 2 3|       1 2 3\       6 6 3
- * ----*----      ----*          ----*        ----*        ----*
+ * Step 1 Step 2 Step 3 Step 4 Step5
+ * 5/ 5| 5\
+ * 4/ 4| 4\
+ * 1 2 3 4 5 1 2 3/ 1 2 3| 1 2 3\ 6 6 3
+ * —--*--— —--* —--* —--* —--*
  *
  * Fold 2-times:
  * [1,2,3,4,5] -> [9,6]
@@ -30,5 +30,34 @@ package by.bkug.jd.kodewars
  * The input array should not be modified!
  */
 fun foldArray(array: IntArray, runs: Int): IntArray {
-    TODO("5 points")
+// TODO("5 points")
+    var ress = array.toMutableList()
+
+    var res : MutableList<Int> = arrayListOf()
+
+    for (i in 0..runs-1){
+        var ind = ress.size%2
+        if (ind != 0) {
+            for (j in 0..ress.size / 2 - 1 ) {
+                res.add(j, ress.get(j) + ress.get(ress.lastIndex-j))
+            }
+            res.add(ress.size / 2, ress.get(ress.size / 2))
+            ress.clear()
+            ress.addAll(res)
+            res.clear()
+        }
+        else {
+            for (j in 0..ress.size / 2 -1) {
+                res.add(j, ress.get(j) + ress.get(ress.lastIndex-j))
+            }
+            ress.clear()
+            ress.addAll(res)
+            res.clear()
+        }
+    }
+    return ress.toIntArray()
+}
+
+fun main(args: Array<String>) {
+    foldArray(intArrayOf(-9, 9, -8, 8, 66, 23), 1)
 }
