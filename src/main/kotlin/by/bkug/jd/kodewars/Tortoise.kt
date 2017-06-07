@@ -18,6 +18,24 @@ package by.bkug.jd.kodewars
  * race(720, 850, 70) => [0, 32, 18]
  * race(80, 91, 37) => [3, 21, 49]
  */
-fun race(v1: Int, v2: Int, g: Int): IntArray {
-    TODO("2 point")
+fun race(v1: Int, v2: Int, g: Int): IntArray? {
+   // TODO("2 point")
+    var res = intArrayOf()
+
+    if (v2>v1) {
+        var vsb = v2 - v1
+        var time = g/vsb.toFloat()
+        res = intArrayOf(time.toInt(), (time*60).toInt() - time.toInt()*60, (time*3600).toInt() - (time*60).toInt()*60)
+        println("" + res[0] + " " + res[1] + " " + res[2])
+    }
+    else
+    {
+        return null
+    }
+
+    return res
+}
+
+fun main(args: Array<String>) {
+    race(80, 91, 37)
 }
