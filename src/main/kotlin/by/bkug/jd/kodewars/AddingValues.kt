@@ -60,8 +60,3 @@ fun addingShifted(arrays: Array<IntArray>, shift: Int): IntArray {
     }
     return result
 }
-
-fun main(args: Array<String>) {
-    val ArrayOfArrays = arrayOf(intArrayOf(1,2,3,4,5,6), intArrayOf(7,7,7,-7,7,7), intArrayOf(1,1,1,1,1,1))
-    addingShifted(ArrayOfArrays, 3)
-}

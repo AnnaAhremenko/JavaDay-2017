@@ -11,7 +11,6 @@ package by.bkug.jd.kodewars
  * The parameter of accum is a string which includes only letters from a..z and A..Z.
  */
 fun accum(s: String): String {
-
     var arr = s.toCharArray()
     var str = ""
 
@@ -21,8 +20,4 @@ fun accum(s: String): String {
     str = str.dropLast(1)
 
     return str
-}
-
-fun main(args: Array<String>) {
-    accum("HeLLo")
 }

@@ -27,7 +27,3 @@ fun longest(s1: String, s2: String): String {
     return str
     //TODO("1 Point")
 }
-
-fun main(args: Array<String>) {
-    longest("xyaabbbccccdefww", "xxxxyyyyabklmopq")
-}

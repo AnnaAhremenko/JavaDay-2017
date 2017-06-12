@@ -39,16 +39,16 @@ fun foldArray(array: IntArray, runs: Int): IntArray {
         var ind = ress.size%2
         if (ind != 0) {
             for (j in 0..ress.size / 2 - 1 ) {
-                res.add(j, ress.get(j) + ress.get(ress.lastIndex-j))
+                res.add(j, ress[j] + ress[ress.lastIndex-j])
             }
-            res.add(ress.size / 2, ress.get(ress.size / 2))
+            res.add(ress.size / 2, ress[ress.size / 2])
             ress.clear()
             ress.addAll(res)
             res.clear()
         }
         else {
             for (j in 0..ress.size / 2 -1) {
-                res.add(j, ress.get(j) + ress.get(ress.lastIndex-j))
+                res.add(j, ress[j] + ress[ress.lastIndex-j])
             }
             ress.clear()
             ress.addAll(res)
