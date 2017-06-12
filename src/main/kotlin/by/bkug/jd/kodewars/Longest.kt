@@ -24,10 +24,7 @@ fun longest(s1: String, s2: String): String {
     for(i in 0..res.size-1) {
         str += res[i]
     }
-
-    print(str)
     return str
-
     //TODO("1 Point")
 }
 

@@ -13,19 +13,16 @@ package by.bkug.jd.kodewars
 fun accum(s: String): String {
 
     var arr = s.toCharArray()
-    var str: CharSequence
-    str = ""
+    var str = ""
 
     for (i in 0..(arr.size - 1)) {
         str += arr[i].toString().decapitalize().repeat(i + 1).capitalize().plus("-")
     }
     str = str.dropLast(1)
 
-    println(str)
     return str
 }
 
 fun main(args: Array<String>) {
-    accum("Hello")
-
+    accum("HeLLo")
 }

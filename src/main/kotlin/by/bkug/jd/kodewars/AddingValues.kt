@@ -53,13 +53,11 @@ fun addingShifted(arrays: Array<IntArray>, shift: Int): IntArray {
     //TODO("3 Points")
     var result = IntArray(arrays[0].size + shift * (arrays.size-1))
 
-
     for(i in 0..arrays.size-1) {
         for (j in 0 .. arrays[i].size-1) {
             result[j+shift*i] += arrays[i][j]
         }
     }
-
     return result
 }
 
