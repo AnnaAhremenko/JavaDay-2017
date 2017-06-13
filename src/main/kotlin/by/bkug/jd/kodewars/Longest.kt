@@ -16,14 +16,13 @@ package by.bkug.jd.kodewars
  * longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
  */
 fun longest(s1: String, s2: String): String {
-    var result = s1.toCharArray() + s2.toCharArray()
+    val result = s1.toCharArray() + s2.toCharArray()
     result.sort()
-    var res = result.distinct()
+    val res = result.distinct()
     var str = ""
 
-    for(i in 0..res.size-1) {
+    for(i in res.indices) {
         str += res[i]
     }
     return str
-    //TODO("1 Point")
 }

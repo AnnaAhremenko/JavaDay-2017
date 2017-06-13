@@ -11,13 +11,11 @@ package by.bkug.jd.kodewars
  * The parameter of accum is a string which includes only letters from a..z and A..Z.
  */
 fun accum(s: String): String {
-    var arr = s.toCharArray()
+    val arr = s.toCharArray()
     var str = ""
 
-    for (i in 0..(arr.size - 1)) {
+    for (i in arr.indices) {
         str += arr[i].toString().decapitalize().repeat(i + 1).capitalize().plus("-")
     }
-    str = str.dropLast(1)
-
-    return str
+    return str.dropLast(1)
 }

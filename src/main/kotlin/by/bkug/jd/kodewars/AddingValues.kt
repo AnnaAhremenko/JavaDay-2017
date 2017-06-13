@@ -50,11 +50,10 @@ import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray
  * I have created other katas. Have a look if you like coding and challenges.
  */
 fun addingShifted(arrays: Array<IntArray>, shift: Int): IntArray {
-    //TODO("3 Points")
-    var result = IntArray(arrays[0].size + shift * (arrays.size-1))
+    val result = IntArray(arrays[0].size + shift * (arrays.size-1))
 
-    for(i in 0..arrays.size-1) {
-        for (j in 0 .. arrays[i].size-1) {
+    for(i in arrays.indices) {
+        for (j in arrays[i].indices) {
             result[j+shift*i] += arrays[i][j]
         }
     }
